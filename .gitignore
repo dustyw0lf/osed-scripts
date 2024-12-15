@@ -1,0 +1,7 @@
+# -- Base
+.*
+!.gitignore
+!.github
+
+# -- VSCode
+!.vscode 
