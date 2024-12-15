@@ -39,7 +39,7 @@ Copy-Item "$ShareDir\windbglib.py" "C:\Program Files\Windows Kits\10\Debuggers\x
 Copy-Item "$ShareDir\mona.py" "C:\Program Files\Windows Kits\10\Debuggers\x86"
 Copy-Item "$ShareDir\pykd.pyd" "C:\Program Files\Windows Kits\10\Debuggers\x86\winext"
 
-Write-Output "[=] in case you see something about symbols when running mona, try executing the following (the runtime took too long to install)"
-Write-Output 'regsvr32 "C:\Program Files\Common Files\Microsoft Shared\VC\msdia90.dll"'
+Write-Output "[+] registering runtime debug dll"
+regsvr32 "C:\Program Files\Common Files\Microsoft Shared\VC\msdia90.dll"
 
 Copy-Item \\tsclient\_home_kali_share\windbg\dark-green-x64.wew C:\Users\Offsec\Desktop\windbg\dark-green-x64.wew
