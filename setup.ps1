@@ -34,7 +34,7 @@ $p = [System.Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVar
 [System.Environment]::SetEnvironmentVariable('Path', "C:\Python27\;C:\Python27\Scripts;" + $p, [System.EnvironmentVariableTarget]::User)
 
 # copy pykd, mona, and scripts
-Write-Output "[+] copying over mona files and pykd"
+Write-Output "[+] copying over pykd, mona, and scripts"
 Copy-Item "$ShareDir\pykd.pyd" "C:\Program Files\Windows Kits\10\Debuggers\x86\winext"
 Copy-Item "$ShareDir\windbglib.py" "C:\Program Files\Windows Kits\10\Debuggers\x86"
 Copy-Item "$ShareDir\mona.py" "C:\Program Files\Windows Kits\10\Debuggers\x86"
