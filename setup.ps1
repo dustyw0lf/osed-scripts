@@ -33,11 +33,12 @@ Write-Output "[+] adding python2.7 to the PATH"
 $p = [System.Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::User)
 [System.Environment]::SetEnvironmentVariable('Path', "C:\Python27\;C:\Python27\Scripts;" + $p, [System.EnvironmentVariableTarget]::User)
 
-# copy mona files
+# copy pykd, mona, and scripts
 Write-Output "[+] copying over mona files and pykd"
+Copy-Item "$ShareDir\pykd.pyd" "C:\Program Files\Windows Kits\10\Debuggers\x86\winext"
 Copy-Item "$ShareDir\windbglib.py" "C:\Program Files\Windows Kits\10\Debuggers\x86"
 Copy-Item "$ShareDir\mona.py" "C:\Program Files\Windows Kits\10\Debuggers\x86"
-Copy-Item "$ShareDir\pykd.pyd" "C:\Program Files\Windows Kits\10\Debuggers\x86\winext"
+Copy-Item "$ShareDir\find-bad-chars.py" "C:\Program Files\Windows Kits\10\Debuggers\x86"
 
 Write-Output "[+] registering runtime debug dll"
 regsvr32 "C:\Program Files\Common Files\Microsoft Shared\VC\msdia90.dll"
