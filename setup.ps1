@@ -24,9 +24,9 @@ Start-Process -FilePath "$InstallDir\vcredist_x86.exe" -Wait
 # Move-Item "C:\Program Files\Windows Kits\10\Debuggers\x86\winext\pykd.dll" "C:\Program Files\Windows Kits\10\Debuggers\x86\winext\pykd.dll.bak"
 
 # install python2.7
-Write-Output "[+] installing python2.7"
-Copy-Item "$ShareDir\python-2.7.17.msi" $InstallDir
-Start-Process -FilePath msiexec.exe -ArgumentList "/i $InstallDir\python-2.7.17.msi /qn" -Wait
+Write-Output "[+] installing Python 2.7"
+Copy-Item "$ShareDir\python-2.7.18.msi" $InstallDir
+Start-Process -FilePath msiexec.exe -ArgumentList "/i $InstallDir\python-2.7.18.msi /qn" -Wait
 
 # register Python2.7 binaries in path before Python3
 Write-Output "[+] adding python2.7 to the PATH"
